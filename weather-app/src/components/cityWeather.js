@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/weatherId.css";
 
-function Home() {
+function CityWeather() {
   const [currentWeather, setCurrentWeather] = useState({});
+
 
   useEffect(() => {
     axios
@@ -23,16 +25,24 @@ function Home() {
     return Math.round(celsius);
   }
 
-  const kelvin = currentWeather.main ? currentWeather.main.temp : "";
+  const kelvinTemp = currentWeather.main ? currentWeather.main.temp : "";
+  const feelsLike = currentWeather.main ? currentWeather.main.feels_like : ""
+  const conditions = currentWeather.main ? currentWeather.weather[0].description : ""
 
-  const celsius = kelvinToCelsius(kelvin)
 
   return (
     <div>
       <h1>WeatherWizard</h1>
-      <p>The Current Weather in Calgary is: {celsius}</p>
+      <br></br>
+<div className="weather-box">
+  <h2>Calgary</h2>
+  <p>{conditions}</p>
+  <p>Temperature: {kelvinToCelsius(kelvinTemp)}</p>
+  <p>Feels like: {kelvinToCelsius(feelsLike)}</p>
+</div>
+
     </div>
   );
 }
 
-export default Home;
+export default CityWeather;

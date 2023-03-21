@@ -1,0 +1,30 @@
+
+body {
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/images6/Animal-Crossing-Pictures-Free-Download.png);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+h1 {
+  background-color: turquoise;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.weather-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding-left: 1em;
+  margin-bottom: 1rem;
+  margin-right: 75rem;
+  margin-left: 5rem;
+
+}
