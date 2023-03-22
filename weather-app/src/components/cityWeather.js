@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useLocation, useParams } from "react-router-dom";
 import "../styles/weatherId.css";
 
-function CityWeather() {
+function CityWeather (props) {
   const [currentWeather, setCurrentWeather] = useState({});
+  const params = useParams();
+  const paramsID = params.id;
+  const idArr = paramsID.split("+")
+  console.log(idArr)
 
 
   useEffect(() => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=51.0447&lon=-114.0719&appid=19fda8f60e3b3e2fde16c833b2ff90a8`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${idArr[1]}&lon=${idArr[0]}&appid=19fda8f60e3b3e2fde16c833b2ff90a8`
       )
       .then((response) => {
         console.log("response", response);
@@ -32,13 +37,13 @@ function CityWeather() {
 
   return (
     <div>
-      <h1>WeatherWizard</h1>
+      <h1><a href="/">WeatherWizard</a></h1>
       <br></br>
 <div className="weather-box">
-  <h2>Calgary</h2>
+  <h2>{currentWeather.name}</h2>
   <p>{conditions}</p>
-  <p>Temperature: {kelvinToCelsius(kelvinTemp)}</p>
-  <p>Feels like: {kelvinToCelsius(feelsLike)}</p>
+  <p>Temperature: {kelvinToCelsius(kelvinTemp)}°C</p>
+  <p>Feels like: {kelvinToCelsius(feelsLike)}°C</p>
 </div>
 
     </div>
