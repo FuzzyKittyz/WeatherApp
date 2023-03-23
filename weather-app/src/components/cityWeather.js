@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation, useParams } from "react-router-dom";
+import NavBar from "./navBar";
 import "../styles/weatherId.css";
 
 function CityWeather (props) {
@@ -8,7 +9,6 @@ function CityWeather (props) {
   const params = useParams();
   const paramsID = params.id;
   const idArr = paramsID.split("+")
-  console.log(idArr)
 
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function CityWeather (props) {
 
   return (
     <div>
-      <h1><a href="/">WeatherWizard</a></h1>
+     <NavBar/>
       <br></br>
 <div className="weather-box">
   <h2>{currentWeather.name}</h2>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/weatherSearch.css"
+import NavBar from "./navBar";
 
 function Home() {
   const [city, setCity] = useState("");
@@ -20,7 +21,7 @@ function Home() {
 
   return (
     <div>
-      <h1>WeatherWizard</h1>
+      <NavBar/>
       <h2>Home Page</h2>
       <form onSubmit={handleSubmit}>
         <input
