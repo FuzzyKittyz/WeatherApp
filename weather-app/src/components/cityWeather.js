@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import "../styles/weatherId.css";
 
 function CityWeather (props) {
-  const [currentWeather, setCurrentWeather] = useState({});
+  const [currentWeather, setCurrentWeather] = useState([]);
   const params = useParams();
   const paramsID = params.id;
   const idArr = paramsID.split("+")
