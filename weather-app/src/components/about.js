@@ -3,6 +3,7 @@ import "../styles/about.css"
 
 function About() {
   return (
+    <div className="about-box">
     <div className="about-container">
       <h1>About WeatherWizard</h1>
       <p>
@@ -18,10 +19,11 @@ function About() {
         weather information.
       </p>
       <p>
-        WeatherWizard was built by [Your Name] as a personal project to learn
+        WeatherWizard was built by Chris Abel as a personal project to learn
         more about React and APIs. If you have any feedback or suggestions for
-        improving WeatherWizard, please feel free to contact me at [Your Email].
+        improving WeatherWizard, please feel free to contact me at topher.a@hotmail.com.
       </p>
+    </div>
     </div>
   );
 }
